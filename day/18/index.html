@@ -45,7 +45,7 @@
 
 //下面是工具函数
     function getFromLocalStorage(name){
-        return JSON.parse(localStorage.getItem(name) || '')
+        return JSON.parse(localStorage.getItem(name) || null)
     }
 
     function tag(tagName){
