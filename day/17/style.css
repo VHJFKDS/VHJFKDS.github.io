@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:url('./img/wallhaven-yje5gg.jpg');
+    background-position: right top;
+}
+a{
+    text-decoration:none;
+}
+
+header{
+    background: linear-gradient(to bottom, rgba(104,135,112,1) 0%, rgba(104,135,112,1) 6%, rgba(111,196,111,1) 46%, rgba(109,209,112,1) 58%, rgba(182,230,131,1) 100%);
+}
+header >a{
+    margin-left: 40px;
+}
+header >form{
+    float: right;
+    margin-top:10px;
+}
+header > #button{
+    width: 70px;
+    height: 30px
+    border-radius: 0.2em;
+}
+kbd{
+    border:1px solid #f6f6f6;
+    width:5em;
+    height:5em;
+    margin-right: 12px;
+    border-radius: 1.5em;
+    background: linear-gradient(to bottom, rgba(245,245,242,1) 0%, rgba(247,247,166,1) 100%);
+    box-shadow: -4px 4px 5px 0px rgba(0,0,0,0.75);
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+}
+kbd > p{
+    padding:20px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+kbd > button{
+    position: absolute;
+    left:10px;
+    bottom:3px;
+    display:none;
+    width:1.2em;
+    height: 1.2em;
+    border-radius: 0.2em;
+    font-size: 80%;
+    background:#ffb598;
+    border:none;
+}
+kbd:hover >button{
+    display: inline-block;
+    /* background:#9bb366; */
+}
+main >#mainX div:nth-child(2){
+    margin-left: 1em;
+    margin-top:20px;
+}
+main >#mainX div:nth-child(3){
+    margin-left: 2em;
+    margin-top:20px;
+}
+#mainX{
+    display: inline-block;
+}
+main{
+    text-align: center;
+    margin-top:150px;
+}
