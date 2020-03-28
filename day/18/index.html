@@ -10,12 +10,12 @@
 </head>
 <body>
     <header>
-        <a href="file:///F:/VHJFKDS.github.io/day/17/index.html" target="_blank"><img src="./img/tree2.png" width="70px" height="70px"></a>
+        <a href="https://www.baidu.com/" target="_blank"><img src="./img/星星2.png" width="70px" height="60px"></a>
         <form name="s" action="http://www.baidu.com/s">
 
-        <input id="p" type="text" name="wd" autocomplete="on" value=""></input>
-        <input class="button" type="button" onclick="window.open('http://www.baidu.com/s')" value="百度一下" ></input>
-        <input class="button" type="button" onclick="window.open('http://www.google.com')"  value="谷歌搜索" ></button>
+        <input id="search" type="text" name="" autocomplete="on" value="搜索...">
+        <input class="button" type="button" onclick="window.open('http://www.baidu.com/s')" value="百度一下" >
+        <input class="button" type="button" onclick="window.open('http://www.google.com')"  value="谷歌搜索" >
         </form>
     </header>
     <main>
@@ -72,23 +72,23 @@
             hash[key]=web //hash 变更
             img2.src='http://'+web+'/favicon.ico'
             img.onerror=function(xxx){
-            xxx.target.src='https://i.loli.net/2019/11/18/M1mGI5iJoQgvbTX.png'
+            xxx.target.src='https://i.loli.net/2020/03/28/VoRheSGXjPFU5mv.png'
         }
             localStorage.setItem('utlchange',JSON.stringify(hash))
         }
         return button
     }
 
-//域名
+    //域名
     function createImage(domain){
         var img=tag('img')
         if(domain){
             img.src='http://'+domain+'/favicon.ico'
         }else{
-            img.src='https://i.loli.net/2019/11/18/M1mGI5iJoQgvbTX.png'
+            img.src='https://i.loli.net/2020/03/28/VoRheSGXjPFU5mv.png'
         }
         img.onerror=function(xxx){
-            xxx.target.src='https://i.loli.net/2019/11/18/M1mGI5iJoQgvbTX.png'
+            xxx.target.src='https://i.loli.net/2020/03/28/VoRheSGXjPFU5mv.png'
         }
         return img
     }

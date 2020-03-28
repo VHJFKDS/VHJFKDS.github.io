@@ -13,18 +13,35 @@ a{
 }
 
 header{
+    background: linear-gradient(to bottom, rgba(15,15,14,0.89) 51%, rgba(15,15,14,0.68) 99%, rgba(66,66,64,0.68) 100%);
 }
 header >a{
     margin-left: 40px;
 }
+header >a img{
+    padding: 6px;
+}
 header >form{
     float: right;
-    margin-top:10px;
+    line-height: 70px;
+    margin-right: 40px;
 }
-header > #button{
-    width: 70px;
-    height: 30px;
+header form #search{
+    color:#909090;
+    background-color:#111111;
+    border: 0.7px solid #909090;
     border-radius: 0.2em;
+    padding: 6px 10px;
+}
+header form .button{
+    width: 70px;
+    height: 28px;
+    border-radius: 0.2em;
+    margin-left: 10px;
+    background-color:#111111;
+    border: 0.7px solid #909090;
+    color:#909090;
+
 }
 kbd{
     border:1px solid #373737;
