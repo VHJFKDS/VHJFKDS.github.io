@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        canvas {
+            background: red;
+            display: block;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <canvas id="xxx"></canvas>
+    <button id="eraser">橡皮擦</button>
+
+    <script>
+        var canvas = document.getElementById('xxx');
+        var ctx = canvas.getContext('2d');
+
+        autoSetCanvasSize(canvas)
+
+        listenToMouse(canvas)
+
+        var eraserEnabled = false
+        eraser.onclick = function () {
+            eraserEnabled = !eraserEnabled
+        }
+
+
+        /****第一部分：设置窗口****/
+        function autoSetCanvasSize(canvas) {
+            window.onresize = function () {
+                setCanvasSize()
+            }
+            function setCanvasSize() {
+                var pageWidth = document.documentElement.clientWidth
+                var pageHeight = document.documentElement.clientHeight
+                canvas.width = pageWidth
+                canvas.height = pageHeight
+            }
+        }
+
+
+        /******第二部分:监听mouse事件******/
+        function listenToMouse(canvas) {
+            var using = false
+            var lastPoint = { x: undefined, y: undefined }
+
+            canvas.onmousedown = function (a) {
+                var x = a.clientX
+                var y = a.clientY
+                if (eraserEnabled) {
+                    using = true
+                    ctx.clearRect(x - 5, y - 5, 10, 10)
+                } else {
+                    using = true
+                    drawCircle(x, y, 5)
+                    lastPoint = { "x": x, "y": y }
+                }
+            }
+
+            canvas.onmousemove = function (a) {
+                var x = a.clientX
+                var y = a.clientY
+                if(!using){return}
+                if (eraserEnabled) {
+                        ctx.clearRect(x - 5, y - 5, 10, 10)                  
+                } else {                  
+                    var newPoint = { "x": x, "y": y }
+                    drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+                    drawCircle(x, y, 5)
+                    lastPoint = newPoint
+                }
+            }
+
+
+            canvas.onmouseup = function (z) {
+                using = false
+            }
+
+            function drawCircle(x, y, radius) {
+                ctx.beginPath()
+                ctx.arc(x, y, radius, 0, Math.PI * 2)
+                ctx.fill()
+            }
+
+            function drawLine(x1, y1, x2, y2) {
+                ctx.beginPath();
+                ctx.strokeStyle = "black"
+                ctx.lineWidth = 10
+                ctx.moveTo(x1, y1)
+                ctx.lineTo(x2, y2)
+                ctx.stroke()
+                ctx.closePath()
+            }
+        }
+
+    </script>
+</body>
+
+</html>
