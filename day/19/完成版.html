@@ -44,8 +44,8 @@
     <script>
         var canvas = document.getElementById('xxx');
         var ctx = canvas.getContext('2d');
-
-        autoSetCanvasSize(canvas)
+        setCanvasSize()
+        autoSetCanvasSize()
 
         listenToMouse(canvas)
 
@@ -61,17 +61,18 @@
 
 
         /****第一部分：设置窗口****/
-        function autoSetCanvasSize(canvas) {
+        function autoSetCanvasSize() {
             window.onresize = function () {
                 setCanvasSize()
             }
-            function setCanvasSize() {
+        }
+        function setCanvasSize() {
                 var pageWidth = document.documentElement.clientWidth
                 var pageHeight = document.documentElement.clientHeight
                 canvas.width = pageWidth
                 canvas.height = pageHeight
             }
-        }
+        
 
 
         /******第二部分:监听mouse事件******/
@@ -79,18 +80,18 @@
             var using = false
             var lastPoint = { x: undefined, y: undefined }
 
+
             canvas.onmousedown = function (a) {
-                var x = a.clientX
-                var y = a.clientY
-                if (eraserEnabled) {
-                    using = true
-                    ctx.clearRect(x - 5, y - 5, 10, 10)
-                } else {
-                    using = true
-                    drawCircle(x, y, 5)
-                    lastPoint = { "x": x, "y": y }
-                }
+            var x = a.clientX
+            var y = a.clientY
+            using = true
+            if (eraserEnabled) {
+            ctx.clearRect(x - 5, y - 5, 10, 10)
+            } else {
+            drawCircle(x, y, 5)
+            lastPoint = { "x": x, "y": y }
             }
+        }
 
             canvas.onmousemove = function (a) {
                 var x = a.clientX

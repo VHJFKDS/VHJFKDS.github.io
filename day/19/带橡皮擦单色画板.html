@@ -31,9 +31,9 @@
     <script>
         var canvas = document.getElementById('xxx');
         var ctx = canvas.getContext('2d');
-
-        autoSetCanvasSize(canvas)
-
+        setCanvasSize()
+        autoSetCanvasSize()
+        
         listenToMouse(canvas)
 
         var eraserEnabled = false
@@ -43,17 +43,18 @@
 
 
         /****第一部分：设置窗口****/
-        function autoSetCanvasSize(canvas) {
+        function autoSetCanvasSize() {
             window.onresize = function () {
                 setCanvasSize()
             }
-            function setCanvasSize() {
+        }
+        function setCanvasSize() {
                 var pageWidth = document.documentElement.clientWidth
                 var pageHeight = document.documentElement.clientHeight
                 canvas.width = pageWidth
                 canvas.height = pageHeight
             }
-        }
+        
 
 
         /******第二部分:监听mouse事件******/
