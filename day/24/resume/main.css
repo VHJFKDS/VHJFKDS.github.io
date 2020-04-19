@@ -59,16 +59,17 @@ padding-top:1px;
 }
 .topNavBar nav ul>li{
     float:left;
-    margin-left: 17px;
-    margin-right: 17px;
+    /* margin-left: 17px; */
+    /* margin-right: 17px; */
+    margin: 5px 17px;
     position: relative;
 }
 .topNavBar nav ul>li>a{
-    padding-top:5px;
+    /* padding-top:5px; */
     padding-bottom:5px;
     position: relative;
 }
-.topNavBar nav ul>li>a:hover::after{
+.topNavBar nav ul>li.active > a::after{
     content: '';
     display: block;
     position: absolute;
@@ -86,11 +87,29 @@ padding-top:1px;
 .topNavBar .submenu{
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 150%;
+    right: 0;
+    color: #3d4451;
+    background: white;
 }
-.topNavBar .submenu.active{
+.topNavBar li.active > .submenu{
     display: block;
+    animation: submenuSlide 0.3s;
+    box-shadow: 0 0 6px rgba(0,0,0,0.25);
+
+}
+@keyframes submenuSlide{
+    0%{
+       margin-right: 100%;  /*依据父元素的100%*/
+    }
+    100%{
+       margin-right: 0;
+    }
+}
+.topNavBar .submenu > li{
+    white-space: nowrap;  /*不换行*/
+    padding: 5px 10px;
+    background-color: white;
 }
 .button{
     color:inherit;
