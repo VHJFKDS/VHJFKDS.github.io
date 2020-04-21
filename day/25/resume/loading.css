@@ -15,10 +15,10 @@
     width:0px;
     height:0px;
     border-radius:50%;
-    animation:s 1.5s linear infinite;
+    animation:s 1s linear infinite;
   }
   .loading::after{
-    animation-delay:0.75s
+    animation-delay:0.5s
   }
   @keyframes s{
     0%{
