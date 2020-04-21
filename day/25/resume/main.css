@@ -3,7 +3,19 @@ body{background:#efefef;color:black;}
 ul,ol{list-style: none;}
 h1,h2{font-weight: bold;}
 a{text-decoration:none;}
+.clearfix::after{content:'';display:block;clear:both;}
 
+[data-x].offset{
+  transform: translateY(100px);
+}
+[data-x]{
+transform: translateY(0);
+transition: all 0.5s;
+}
+@keyframes slideUp{
+    0%{transform: translateY(-30px);}
+    100%{transform: translateY(0);}
+}
 .topNavBar{padding:20px 16px;position: fixed;top:0;left:0;width:100%; color:#9A9DA2;transition: all 0.5s;}
 .topNavBar.sticky{color: black;background: white; padding: 10px 16px; z-index: 1; box-shadow: 0 0 6px rgba(0,0,0,0.25);}
 .topNavBar-inner{padding:0 16px;}
@@ -13,7 +25,6 @@ a{text-decoration:none;}
 .topNavBar .logo .card{color:#9A9DA2;}
 
 .topNavBar nav{font-size:13px;padding-top:8px;padding-bottom:8px;}
-.clearfix::after{content:'';display:block;clear:both;}
 .topNavBar nav a{color:inherit;  /*继承上一级颜色*/text-decoration:none;font-weight:bold;}
 .topNavBar nav ul{padding:0;margin:0;}
 .topNavBar nav ul>li{float:left;margin: 5px 17px;position: relative;}
@@ -49,18 +60,10 @@ a{text-decoration:none;}
 
 }
 @keyframes submenuSlide{
-    0%{
-       margin-right: 100%;  /*依据父元素的100%*/
-    }
-    100%{
-       margin-right: 0;
-    }
+    0%{margin-right: 100%; } /*依据父元素的100%*/
+    100%{margin-right: 0;}
 }
-.topNavBar .submenu > li{
-    white-space: nowrap;  /*不换行*/
-    padding: 5px 10px;
-    background-color: white;
-}
+.topNavBar .submenu > li{white-space: nowrap;  /*不换行*/padding: 5px 10px;background-color: white;}
 .button{color:inherit;}
 
 .banner{background-image:url(./img/wallhaven-oxj7mm.jpg); height:520px; background-size:cover; background-position: center center;}
@@ -96,14 +99,14 @@ section.portfolio{text-align: center;}
 section.skills>h2,
 section.portfolio>h2{text-align: center;font-size: 34px;color:#3d4451;}
 
-.skills>ol{background:white;height:245px;max-width: 940px;box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);padding:42px 50px;
+section.skills>ol{background:white;height:245px;max-width: 940px;box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);padding:42px 50px;
     box-sizing: border-box; margin-top:30px;}
-.skills>ol>li{float:left;width:48%;}
-.skills>ol>li>h3{font-weight: normal;line-height: 1.1;font-size: 15px;}
-.skills>ol>li:nth-child(even){float:right;margin-left: 10px;}
-
-section>ol>li .propressBar{background:#fae1e1;border-radius: 5px; margin:5px auto 40px; height: 5px;}
-section .propressBar .propress{ background: #e6686a; height:100%; width:70%; border-radius:5px;}
+section.skills>ol>li{float:left;width:48%;}
+section.skills>ol>li>h3{font-weight: normal;line-height: 1.1;font-size: 15px;}
+section.skills>ol>li:nth-child(even){float:right;margin-left: 10px;}
+section>ol>li .progressBar{background:#fae1e1;border-radius: 5px; margin:5px auto 40px; height: 5px;overflow: hidden;}
+section .progressBar .progress{ background: #e6686a; height:100%; width:70%; border-radius:5px;transform: translateX(0);transition: all 1s;}
+section.skills.offset .progress{transform: translateX(-100%);}   /*技能条滚动*/
 
 section.portfolio >nav{margin-top:32px;text-align: center; display: inline-block; vertical-align: top;}
 section.portfolio >nav>ol{display: inline-block;margin:auto;vertical-align: top;}

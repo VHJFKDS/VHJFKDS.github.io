@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,105 +10,112 @@
     <script src="https://at.alicdn.com/t/font_1461955_cfps8u9h8w7.js"></script>
     <style type="text/css">
         .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
-        .site-welcome{
+
+        .site-welcome {
             display: none;
             position: fixed;
-            top:0;left: 0;width: 100%;height: 100%;
-            background:white;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
             z-index: 2;
             justify-content: center;
             align-items: center;
         }
-        .site-welcome.active{
+
+        .site-welcome.active {
             display: flex;
         }
     </style>
     <title>个人简历</title>
 </head>
+
 <body>
     <div id="siteWelcome" class="site-welcome active">
         <div class="loading"></div>
     </div>
-    
+
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
-        <a class="logo" href="#" alt="logo" style="float:left;">
-        <span class="rs">RS</span>
-        <span class="card">card</span>
-    </a>
-    <nav class="menu" style="float:right">
-        <ul class="clearfix">
-            <li>
-                <a href="#siteAbout">关于</a>
-            </li>
-            <li>
-                <a href="#siteSkills">技能</a>
-            </li>
-            <li>
-                <a href="#siteWorks">作品</a> 
-                <ul class="submenu">
-                    <li>作品1</li>
-                    <li>作品2</li>
-                    <li>作品3</li>
+            <a class="logo" href="#" alt="logo" style="float:left;">
+                <span class="rs">RS</span>
+                <span class="card">card</span>
+            </a>
+            <nav class="menu" style="float:right">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#siteAbout">关于</a>
+                    </li>
+                    <li>
+                        <a href="#siteSkills">技能</a>
+                    </li>
+                    <li>
+                        <a href="#siteWorks">作品</a>
+                        <ul class="submenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                        <ul class="submenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">日历</a>
+                    </li>
+                    <li>
+                        <a href="#">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="#">其他</a>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">博客</a>
-                <ul class="submenu">
-                    <li>博客1</li>
-                    <li>博客2</li>
-                    <li>博客3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">日历</a>
-            </li>
-            <li>
-                <a href="#">联系方式</a>
-            </li>
-            <li>
-                <a href="#">其他</a>
-            </li>
-        </ul>
-    </nav>
-    </div>
+            </nav>
+        </div>
     </div>
     <div class="banner">
         <div class="mask"></div>
     </div>
     <main style="margin-top: -340px;">
         <div id="siteAbout" class="usercard" data-x>
-            <div class="pictureAndText clearfix" >
+            <div class="pictureAndText clearfix">
                 <div class="picture"><img src="./img/1571214720(1).jpg" alt="头像" width="300" height="350">
                 </div>
-            <div class="text">
-                <div class="profile">
-                    <span class="welcome">Hello
-                        <span class="triangle"></span>
-                    </span>
-                    <h1>BOBO</h1>
-                    <p>前端开发工程师</p>
-                    <hr>
-                    <dl>
-                        <dt>年龄</dt>
-                        <dd>18</dd>
-                        <dt>所在城市</dt>
-                        <dd>广东</dd>
-                        <dt>邮箱</dt>
-                        <dd>6666@qq.com</dd>
-                        <dt>手机</dt>
-                        <dd>1234567890</dd>
-                    </dl>
+                <div class="text">
+                    <div class="profile">
+                        <span class="welcome">Hello
+                            <span class="triangle"></span>
+                        </span>
+                        <h1>BOBO</h1>
+                        <p>前端开发工程师</p>
+                        <hr>
+                        <dl>
+                            <dt>年龄</dt>
+                            <dd>18</dd>
+                            <dt>所在城市</dt>
+                            <dd>广东</dd>
+                            <dt>邮箱</dt>
+                            <dd>6666@qq.com</dd>
+                            <dt>手机</dt>
+                            <dd>1234567890</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
-            </div>
             <footer class="media">
-                
+
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-qq"></use>
@@ -124,7 +132,7 @@
         </div>
         <a class="button" href="./img/1571214720(1).jpg" target="_blank" download>下载PDF简历</a>
         <p>bobo，资深前端工程师，资深前端讲师，现在在学习前端课程。
-            <br/>技能：前端开发，Rails 开发，Node.js 开发
+            <br />技能：前端开发，Rails 开发，Node.js 开发
         </p>
 
     </main>
@@ -133,161 +141,172 @@
         <ol class="clearfix">
             <li>
                 <h3>HTML5 & CSS3</h3>
-                    <div class="propressBar">
-                        <div class="propress" style="width:70%"></div>
-                    </div>
-            </li>  
+                <div class="progressBar">
+                    <div class="progress" style="width:70%"></div>
+                </div>
+            </li>
             <li>
                 <h3>JavaScript</h3>
-                <div class="propressBar">
-                        <div class="propress" style="width:60%"></div>
-                    </div>
+                <div class="progressBar">
+                    <div class="progress" style="width:60%"></div>
+                </div>
 
             </li>
             <li>
                 <h3>jQuery</h3>
-                <div class="propressBar">
-                        <div class="propress" style="width:30%"></div>
-                    </div>
+                <div class="progressBar">
+                    <div class="progress" style="width:30%"></div>
+                </div>
             </li>
             <li>
                 <h3>Vue.js</h3>
-                <div class="propressBar">
-                        <div class="propress" style="width:40%"></div>
-                    </div>
+                <div class="progressBar">
+                    <div class="progress" style="width:40%"></div>
+                </div>
             </li>
             <li>
                 <h3>React.js</h3>
-                <div class="propressBar">
-                        <div class="propress" style="width:50%"></div>
-                    </div>
+                <div class="progressBar">
+                    <div class="progress" style="width:50%"></div>
+                </div>
             </li>
             <li>
                 <h3>HTTP</h3>
-                <div class="propressBar">
-                        <div class="propress" style="width:70%"></div>
-                    </div>
+                <div class="progressBar">
+                    <div class="progress" style="width:70%"></div>
+                </div>
             </li>
         </ol>
     </section>
     <section id="siteWorks" class="portfolio" data-x>
         <h2>作品集</h2>
         <nav>
-        <ol class="clearfix">
-            <li id="portfolio1">所有</li>
-            <li id="portfolio2">框架</li>
-            <li id="portfolio3">原生JS&CSS</li>
-        </ol>
-        <div id="portfolioBar" class="bar state-1">
-            <div class="bar-inner"></div>
-        </div>
+            <ol class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生JS&CSS</li>
+            </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
+            </div>
         </nav>
         <script>
-            
-      portfolio1.onclick= function(){
-        portfolioBar.className = 'bar state-1'
-      }
-      portfolio2.onclick= function(){
-        portfolioBar.className = 'bar state-2'
-      }
-      portfolio3.onclick= function(){
-        portfolioBar.className = 'bar state-3'
-      }
-    
-            </script>
+
+            portfolio1.onclick = function () {
+                portfolioBar.className = 'bar state-1'
+            }
+            portfolio2.onclick = function () {
+                portfolioBar.className = 'bar state-2'
+            }
+            portfolio3.onclick = function () {
+                portfolioBar.className = 'bar state-3'
+            }
+
+        </script>
         <div class="works">
             <div class="big">
                 <img src="./img/1.jpg" alt="作品1">
             </div>
             <div class="small">
-                <img src="./img/2.jpg" alt="作品2" width=293px height=289px>                 
+                <img src="./img/2.jpg" alt="作品2" width=293px height=289px>
             </div>
             <div class="small">
-                <img src="./img/3.jpg" alt="作品3" width=293px height=289px>            
+                <img src="./img/3.jpg" alt="作品3" width=293px height=289px>
             </div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
     <script>
-        setTimeout(function(){
+        setTimeout(function () {
             siteWelcome.classList.remove('active')
-        },1000)
+        }, 1000)
 
-         /*监听导航粘着效果*/
-        window.onscroll=function(xx){    
-            if(window.scrollY > 0){
+        //添加offset 类
+        let specialTags = document.querySelectorAll('[data-x]')
+        for (let i = 0; i < specialTags.length; i++) {    /**/
+            specialTags[i].classList.add('offset')
+        }
+        setTimeout(function () {
+            findClosest()
+        }, 1000)
+        /*监听导航粘着效果*/
+        window.onscroll = function (xx) {
+            if (window.scrollY > 0) {
                 topNavBar.classList.add('sticky')
-            }else{
+            } else {
                 topNavBar.classList.remove('sticky')
             }
-                    
-            let specialTags=document.querySelectorAll('[data-x]')
-            let minIndex=0        // minIndex就是离窗口顶部最近的元素
-            for(let i=1;i<specialTags.length;i++){    /*找到距离最小的data-x*/
-                if(Math.abs(specialTags[i].offsetTop-window.scrollY) < Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
-                    minIndex=i
+            findClosest()
+        }
+
+        function findClosest() {
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0        // minIndex就是离窗口顶部最近的元素
+            for (let i = 1; i < specialTags.length; i++) {    /*找到距离最小的data-x*/
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    minIndex = i
                 }
-                
             }
-            for(let i=0;i<specialTags.length;i++){    /*为了消除data-x的active*/
-                specialTags[i].classList.remove('active')
-            }
-            specialTags[minIndex].classList.add('active')    /*只在最近上窗距的data-x加active*/
-            let id=specialTags[minIndex].id            /*获取当前高亮的id*/
-            let a=document.querySelector('a[href="#'+id+'"]')      /*获取3个id对应的a标签*/
-            let li=a.parentNode                            /*获取a标签的爸爸li标签*/
-            let brotherAndMe=li.parentNode.children        /*li的所以兄弟姐妹*/
-            for(let i=0;i<brotherAndMe.length;i++){        
+
+            specialTags[minIndex].classList.remove('offset')    /*只在最近上窗距的data-x加active*/
+            let id = specialTags[minIndex].id            /*获取当前高亮的id*/
+            let a = document.querySelector('a[href="#' + id + '"]')      /*获取3个id对应的a标签*/
+            let li = a.parentNode                            /*获取a标签的爸爸li标签*/
+            let brotherAndMe = li.parentNode.children        /*li的所以兄弟姐妹*/
+            for (let i = 0; i < brotherAndMe.length; i++) {
                 brotherAndMe[i].classList.remove('highlight')         /*遍历li下所有元素和自己，移除高亮*/
             }
             li.classList.add('highlight')          /*只给对应的id加高亮*/
         }
 
-         /*二级菜单特效*/
+
+
+        /*二级菜单特效*/
         let liTags = document.querySelectorAll('nav.menu>ul>li')
-        for(let i=0; i<liTags.length; i++){
-            liTags[i].onmouseenter=function(x){
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
                 x.currentTarget.classList.add('active')
             }
-            liTags[i].onmouseleave=function(x){
+            liTags[i].onmouseleave = function (x) {
                 x.currentTarget.classList.remove('active')
             }
         }
 
-          /*页面跳转*/
+        /*页面跳转*/
         let aTags = document.querySelectorAll('nav.menu>ul>li>a')
-        function animate(time){                 /*多长时间动一次根据浏览器决定*/
+        function animate(time) {                 /*多长时间动一次根据浏览器决定*/
             requestAnimationFrame(animate);
             TWEEN.update(time);
         }
         requestAnimationFrame(animate)
 
-        for(let i=0; i<aTags.length; i++){
-            aTags[i].onclick=function(x){
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
                 x.preventDefault()
-                let a=x.currentTarget
-                let href=a.getAttribute('href')
-                let element=document.querySelector(href)
-                let top=element.offsetTop
+                let a = x.currentTarget
+                let href = a.getAttribute('href')
+                let element = document.querySelector(href)
+                let top = element.offsetTop
                 // let top=document.querySelector(x.currentTarget.getAttribute('href')).offsetTop
-                
-                let currentTop=window.scrollY
-                let targetTop=top-70
-                let s=targetTop-currentTop
-                var coords={y:currentTop};   /*设置初始位置*/
-                var t=Math.abs(s/100)*300    /*求绝对值*/
-                if(t>500){t=500}
-                var tween=new TWEEN.Tween(coords)   /*起始位置*/
-                .to({y:targetTop},t)    /*结束位置，时间*/
-                .easing(TWEEN.Easing.Quadratic.InOut)   /*选择函数类型，缓动类型*/
-                .onUpdate(function(){     /*每次更新会调用此函数*/
-                    window.scrollTo(0,coords.y)
-                })
-                .start();    /*开始缓动*/
+
+                let currentTop = window.scrollY
+                let targetTop = top - 70
+                let s = targetTop - currentTop
+                var coords = { y: currentTop };   /*设置初始位置*/
+                var t = Math.abs(s / 100) * 300    /*求绝对值*/
+                if (t > 500) { t = 500 }
+                var tween = new TWEEN.Tween(coords)   /*起始位置*/
+                    .to({ y: targetTop }, t)    /*结束位置，时间*/
+                    .easing(TWEEN.Easing.Quadratic.InOut)   /*选择函数类型，缓动类型*/
+                    .onUpdate(function () {     /*每次更新会调用此函数*/
+                        window.scrollTo(0, coords.y)
+                    })
+                    .start();    /*开始缓动*/
             }
         }
     </script>
 
-    
+
 </body>
+
 </html>
