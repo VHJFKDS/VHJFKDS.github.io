@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <title>Document</title>
+    <style>
+        .images {
+            display: flex;
+            transition: transform 0.5s;
+
+        }
+        .window {
+            width: 300px;
+            overflow: hidden;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="window">
+        <div class="images" id=images>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589270815585&di=036a98d5ddb8e23d9f37645e3d3d108f&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F130528%2F240372-13052PIH752.jpg"
+                width=300px>
+
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589271520743&di=e6ebb10a102977479414f95838e879d0&imgtype=0&src=http%3A%2F%2Fpic24.nipic.com%2F20121018%2F2457331_075702084350_2.jpg"
+                width=300px>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589274882284&di=4db3fb73febae9b5aad92f5c113d81b1&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F21a4462309f790521cd5cb3c0cf3d7ca7acbd5ee.jpg"
+                width=300px>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589282411523&di=71c970950283962a313fde463776a0d1&imgtype=0&src=http%3A%2F%2Fstatic.ictilearning.com%2Fupload%2Feduplat%2Farticle%2F20161214%2F1481687336253203251.jpg"
+                width=300px>
+        </div>
+    </div>
+    <span id=buttons>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </span>
+   
+    <script>
+        //无论多少张图片，都可以轮播
+        var allButtons=$('#buttons > span')
+        for(let i=0;i<allButtons.length;i++){
+            $(allButtons[i]).on('click',function(x){
+                var index=$(x.currentTarget).index()
+                var p=index * -300
+                $('#images').css({
+                    transform:'translate('+p+'px)'
+                })
+                n=index
+                allButtons.eq(n)       //增加高亮
+                .addClass('red')
+                .siblings('.red').removeClass('red')
+            })
+        }
+
+        //加入自动轮播
+        var n=0
+        var size=allButtons.length
+        var timeId=setInterval(()=>{
+            n+=1
+            allButtons.eq(n%size).trigger('click')    //无论多少张图片，都可以自动轮播
+            .addClass('red')
+            .siblings('.red').removeClass('red')
+        },2000)
+
+        $('.window').on('mouseenter',function(){      //当用户鼠标移入目标时，停止轮播
+            window.clearInterval(timeId)            
+        })
+        $('.window').on('mouseleave',function(){      //用户鼠标移出时开始轮播
+            timeId=setInterval(()=>{
+            n+=1
+            allButtons.eq(n%size).trigger('click')    
+            .addClass('red')
+            .siblings('.red').removeClass('red')
+        },2000)
+        })
+    </script>
+</body>
+
+</html>
