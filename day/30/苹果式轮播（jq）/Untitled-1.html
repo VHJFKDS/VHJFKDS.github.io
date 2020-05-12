@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <title>Document</title>
+    <style>
+        .images {
+            display: flex;
+            transition: transform 0.5s;
+
+        }
+
+        .window {
+            border: 5px solid green;
+            width: 300px;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="window">
+        <div class="images" id=images>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589270815585&di=036a98d5ddb8e23d9f37645e3d3d108f&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F130528%2F240372-13052PIH752.jpg"
+                width=300px>
+
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589271520743&di=e6ebb10a102977479414f95838e879d0&imgtype=0&src=http%3A%2F%2Fpic24.nipic.com%2F20121018%2F2457331_075702084350_2.jpg"
+                width=300px>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589274882284&di=4db3fb73febae9b5aad92f5c113d81b1&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F21a4462309f790521cd5cb3c0cf3d7ca7acbd5ee.jpg"
+                width=300px>
+        </div>
+    </div>
+    <button id=p1>1</button>
+    <button id=p2>2</button>
+    <button id=p3>3</button>
+    <script>
+        $(p1).on('click',function(){
+            $(images).css({
+                transform:'translateX(0)'
+            })
+        })
+        $(p2).on('click',function(){
+            $(images).css({
+                transform:'translateX(-300px)'
+            })
+        })
+        $(p3).on('click',function(){
+            $(images).css({
+                transform:'translateX(-600px)'
+            })
+        })
+    </script>
+</body>
+
+</html>
