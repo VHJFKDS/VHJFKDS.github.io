@@ -1,0 +1,46 @@
+*{margin: 0;padding: 0;}
+*{box-sizing: border-box;}          /*使box包含border*/
+
+.window{
+    width: 400px;
+    height: 300px;         /*这里必须定宽高*/
+    margin: 20px auto;
+    overflow: hidden;
+}
+.images{
+    position: relative;
+}
+.images >img{
+    width: 100%;         /*使图片与爸爸一样宽，并不是占满它爸爸的意思*/
+    transition: all 0.5s;
+}
+.images >img.right{
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.images >img:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.images >img:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.images >img:nth-child(3){
+    position: absolute;
+    top: 0;
+    left: 100%;
+} 
+.images >img:nth-child(4){
+    position: absolute;
+    top: 0;
+    left: 100%;
+} 
+.images >img:nth-child(5){
+    position: absolute;
+    top: 0;
+    left: 100%;
+} 
