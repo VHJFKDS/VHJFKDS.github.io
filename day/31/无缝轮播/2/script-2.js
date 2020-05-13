@@ -1,57 +1,33 @@
-setTimeout(function(){
-    $('.images>img:nth-child(1)').css({
-        transform:'translateX(-100%)'
+$('.images >img:nth-child(1)').addClass('current')
+$('.images >img:nth-child(2)').addClass('enter')
+
+setTimeout(()=>{
+    $('.images >img:nth-child(1)').removeClass('current').addClass('leave')
+    .one('transitionend',(e)=>{
+        $(e.currentTarget).removeClass('leave').addClass('enter')
     })
-    $('.images>img:nth-child(2)').css({
-        transform:'translateX(-100%)'
-    })
-    $('.images>img:nth-child(1)').one('transitionend',function(e){      //监听动作，动画结束后给元素增加状态移到右边，再去除移动
-        $(e.currentTarget).addClass('right').css({transform:'none'})
-    })
+    $('.images >img:nth-child(2)').removeClass('enter').addClass('current')
 },2000)
-setTimeout(function(){
-    $('.images>img:nth-child(2)').css({
-        transform:'translateX(-200%)'
+setTimeout(()=>{
+    $('.images >img:nth-child(2)').removeClass('current').addClass('leave')
+    .one('transitionend',(e)=>{
+        $(e.currentTarget).removeClass('leave').addClass('enter')
     })
-    $('.images>img:nth-child(3)').css({
-        transform:'translateX(-100%)'
-    })
-    $('.images>img:nth-child(2)').one('transitionend',function(e){
-        $(e.currentTarget).addClass('right').css({transform:'none'})
-    })
+    $('.images >img:nth-child(3)').removeClass('enter').addClass('current')
 },4000)
-setTimeout(function(){
-    $('.images>img:nth-child(3)').css({
-        transform:'translateX(-200%)'
+setTimeout(()=>{
+    $('.images >img:nth-child(3)').removeClass('current').addClass('leave')
+    .one('transitionend',(e)=>{
+        $(e.currentTarget).removeClass('leave').addClass('enter')
     })
-    $('.images>img:nth-child(4)').css({
-        transform:'translateX(-100%)'
-    })
-    $('.images>img:nth-child(3)').one('transitionend',function(e){
-        $(e.currentTarget).addClass('right').css({transform:'none'})
-    })
+    $('.images >img:nth-child(1)').removeClass('enter').addClass('current')
 },6000)
-setTimeout(function(){
-    $('.images>img:nth-child(4)').css({
-        transform:'translateX(-200%)'
+setTimeout(()=>{
+    $('.images >img:nth-child(1)').removeClass('current').addClass('leave')
+    .one('transitionend',(e)=>{
+        $(e.currentTarget).removeClass('leave').addClass('enter')
     })
-    $('.images>img:nth-child(5)').css({
-        transform:'translateX(-100%)'
-    })
-    $('.images>img:nth-child(4)').one('transitionend',function(e){
-        $(e.currentTarget).addClass('right').css({transform:'none'})
-    })
-},8000)
-setTimeout(function(){
-    $('.images>img:nth-child(5)').css({
-        transform:'translateX(-200%)'
-    })
-    $('.images>img:nth-child(1)').css({
-        transform:'translateX(0%)'
-    })
-     $('.images>img:nth-child(5)').one('transitionend',function(e){
-         $(e.currentTarget).addClass('right').css({transform:'none'})
-    })
-},10000)
+    $('.images >img:nth-child(2)').removeClass('enter').addClass('current')
+},9000)
 
-
+// 持续下去的话就是不断img:nth-Child(n+1)的结果,不断的切换状态，可以用for循环
