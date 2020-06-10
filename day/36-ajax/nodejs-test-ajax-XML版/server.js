@@ -30,18 +30,21 @@ var server = http.createServer(function(request, response){
   } else if(path === '/main.js'){
     let string = fs.readFileSync('./main.js','utf8')
     response.setHeader('Content-Type', 'text/javascript;charset=utf-8')
+    response.setHeader('Access-Control-Allow-Origin','*')    //任何人都可访问数据
     response.write(string)
     response.end()
   } else if(path === '/xxx'){
     response.statusCode = 200
-    response.setHeader('Content-Type', 'text/xml;charset=utf-8')
-    response.write(`
-    <note>
-    <to>小姑</to>
-    <from>小明</from>
-    <heading>打招呼</heading>
-    <body>你好</body>
-    </note>    
+    response.setHeader('Content-Type', 'text/json;charset=utf-8')
+    response.write(`    
+    {   //这一段都是符合json的字符串，非对象，后台是无法返回对象给前端的，只能是字符串
+      "note":{
+        "from":"小姑",
+        "to":"小明",
+        "heading":"打招呼",
+        "content":"hi"
+      }
+    }   
     `)
     response.end()
   }else{
