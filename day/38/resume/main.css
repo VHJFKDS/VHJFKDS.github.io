@@ -86,7 +86,13 @@ transition: all 0.5s;
 .usercard svg{width:30px; height:30px; fill:white; vertical-align:top;}
 .usercard .media>a{display: inline-block;border-radius: 50%; line-height: 30px; margin:16px; width:40px;padding:5px 0;}
 .usercard .media>a:hover{background:#cf5d5f;}
-
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 
 main .button{border:1px solid #cdcfd1; font-size: 14px; font-weight: bold; text-align: center; margin: 32px auto; padding:21px 45px;
     display: block;width:100px;color:#3d4451;    transition: box-shadow 0.3s;}
