@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./loading.css">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
+    <script src="https://at.alicdn.com/t/font_1461955_cfps8u9h8w7.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .site-welcome {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 2;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .site-welcome.active {
+            display: flex;
+        }
+    </style>
+    <title>个人简历</title>
+</head>
+
+<body>
+    <div id="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
+
+    <div id="topNavBar" class="topNavBar">
+        <div class="topNavBar-inner clearfix">
+            <a class="logo" href="#" alt="logo" style="float:left;">
+                <span class="rs">RS</span>
+                <span class="card">card</span>
+            </a>
+            <nav class="menu" style="float:right">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#siteAbout">关于</a>
+                    </li>
+                    <li>
+                        <a href="#siteSkills">技能</a>
+                    </li>
+                    <li>
+                        <a href="#siteWorks">作品</a>
+                        <ul class="submenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                        <ul class="submenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">日历</a>
+                    </li>
+                    <li>
+                        <a href="#">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="#">其他</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main style="margin-top: -340px;">
+
+
+        <div id="siteAbout" class="usercard" data-x>
+            <div class="pictureAndText clearfix">
+                <div class="picture"><img src="./img/1571214720(1).jpg" alt="头像" width="300" height="350">
+                </div>
+                <div class="text">
+                    <div class="profile">
+                        <span class="welcome">Hello
+                            <span class="triangle"></span>
+                        </span>
+                        <h1>BOBO</h1>
+                        <p>前端开发工程师</p>
+                        <hr>
+                        <dl>
+                            <dt>年龄</dt>
+                            <dd>18</dd>
+                            <dt>所在城市</dt>
+                            <dd>广东</dd>
+                            <dt>邮箱</dt>
+                            <dd>6666@qq.com</dd>
+                            <dt>手机</dt>
+                            <dd>1234567890</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <footer class="media">
+
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg></a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg></a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg></a>
+            </footer>
+        </div>
+        <a class="button" href="./img/1571214720(1).jpg" target="_blank" download>下载PDF简历</a>
+        <p>bobo，资深前端工程师，资深前端讲师，现在在学习前端课程。
+            <br />技能：前端开发，Rails 开发，Node.js 开发
+        </p>
+
+    </main>
+    <section id="siteSkills" class="skills" data-x>
+        <h2>技能</h2>
+        <ol class="clearfix">
+            <li>
+                <h3>HTML5 & CSS3</h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:70%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>JavaScript</h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:60%"></div>
+                </div>
+
+            </li>
+            <li>
+                <h3>jQuery</h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:30%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>Vue.js</h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:40%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>React.js</h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:50%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>HTTP</h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:70%"></div>
+                </div>
+            </li>
+        </ol>
+    </section>
+    <section id="siteWorks" class="portfolio" data-x>
+        <h2>作品集</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <img src="./img/canvas2.jpg">
+                    <p>使用canvas，原生js制作，有保存功能，颜色、背景选择。</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/3.jpg">
+                    <p>一段话简介</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/keyboard.png">
+                    <p>使用原生js制作keyboard，运用local，querySelector。</p>
+                </div>
+            </div>
+
+            <!-- 导航左右按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+    <script>
+        console.log(window.Swiper)
+        var mySwiper = new Swiper('.swiper-container', {
+            // direction: 'vertical', // 垂直切换选项
+            loop: true, // 无缝循环
+
+            // 前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+        mySwiper.el.onmouseover = function () {
+            mySwiper.navigation.$nextEl.removeClass('hide');
+            mySwiper.navigation.$prevEl.removeClass('hide');
+        }
+        mySwiper.el.onmouseout = function () {
+            mySwiper.navigation.$nextEl.addClass('hide');
+            mySwiper.navigation.$prevEl.addClass('hide');
+        }
+
+
+
+
+
+        setTimeout(function () {
+            siteWelcome.classList.remove('active')
+        }, 1000)
+
+        //添加offset 类
+        let specialTags = document.querySelectorAll('[data-x]')
+        for (let i = 0; i < specialTags.length; i++) {    /**/
+            specialTags[i].classList.add('offset')
+        }
+        setTimeout(function () {
+            findClosest()
+        }, 1000)
+        
+        /*监听导航粘着效果*/
+        window.onscroll = function (xx) {
+            if (window.scrollY > 0) {
+                topNavBar.classList.add('sticky')
+            } else {
+                topNavBar.classList.remove('sticky')
+            }
+            findClosest()
+        }
+
+        function findClosest() {
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0        // minIndex就是离窗口顶部最近的元素
+            for (let i = 1; i < specialTags.length; i++) {    /*找到距离最小的data-x*/
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    minIndex = i
+                }
+            }
+
+            specialTags[minIndex].classList.remove('offset')    /*只在最近上窗距的data-x加active*/
+            let id = specialTags[minIndex].id            /*获取当前高亮的id*/
+            let a = document.querySelector('a[href="#' + id + '"]')      /*获取3个id对应的a标签*/
+            let li = a.parentNode                            /*获取a标签的爸爸li标签*/
+            let brotherAndMe = li.parentNode.children        /*li的所以兄弟姐妹*/
+            for (let i = 0; i < brotherAndMe.length; i++) {
+                brotherAndMe[i].classList.remove('highlight')         /*遍历li下所有元素和自己，移除高亮*/
+            }
+            li.classList.add('highlight')          /*只给对应的id加高亮*/
+        }
+
+
+
+        /*二级菜单特效*/
+        let liTags = document.querySelectorAll('nav.menu>ul>li')
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
+                x.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function (x) {
+                x.currentTarget.classList.remove('active')
+            }
+        }
+
+        /*页面跳转*/
+        let aTags = document.querySelectorAll('nav.menu>ul>li>a')
+        function animate(time) {                 /*多长时间动一次根据浏览器决定*/
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate)
+
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
+                x.preventDefault()
+                let a = x.currentTarget
+                let href = a.getAttribute('href')
+                let element = document.querySelector(href)
+                let top = element.offsetTop
+                // let top=document.querySelector(x.currentTarget.getAttribute('href')).offsetTop
+
+                let currentTop = window.scrollY
+                let targetTop = top - 70
+                let s = targetTop - currentTop
+                var coords = { y: currentTop };   /*设置初始位置*/
+                var t = Math.abs(s / 100) * 300    /*求绝对值*/
+                if (t > 500) { t = 500 }
+                var tween = new TWEEN.Tween(coords)   /*起始位置*/
+                    .to({ y: targetTop }, t)    /*结束位置，时间*/
+                    .easing(TWEEN.Easing.Quadratic.InOut)   /*选择函数类型，缓动类型*/
+                    .onUpdate(function () {     /*每次更新会调用此函数*/
+                        window.scrollTo(0, coords.y)
+                    })
+                    .start();    /*开始缓动*/
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
