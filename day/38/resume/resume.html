@@ -159,30 +159,30 @@
     </section>
     <section id="siteWorks" class="portfolio" data-x>
         <h2>作品集</h2>
+        <div id="mySlides">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
 
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/canvas2.jpg">
+                        <p>使用canvas，原生js制作，有保存功能，颜色、背景选择。</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/3.jpg">
+                        <p>一段话简介</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/keyboard.png">
+                        <p>使用原生js制作keyboard，运用local，querySelector。</p>
+                    </div>
+                </div>
 
-                <div class="swiper-slide">
-                    <img src="./img/canvas2.jpg">
-                    <p>使用canvas，原生js制作，有保存功能，颜色、背景选择。</p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="./img/3.jpg">
-                    <p>一段话简介</p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="./img/keyboard.png">
-                    <p>使用原生js制作keyboard，运用local，querySelector。</p>
-                </div>
+                <!-- 导航左右按钮 -->
+                <div class="swiper-button-prev hide"></div>
+                <div class="swiper-button-next hide"></div>
+
             </div>
-
-            <!-- 导航左右按钮 -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
         </div>
-
     </section>
     <script src="./init-swiper.js"></script>
     <script src="./auto-slide-up.js"></script>
@@ -194,9 +194,8 @@
         setTimeout(function () {
             siteWelcome.classList.remove('active')
         }, 1000)
-       
-    </script>
 
+    </script>
 
 </body>
 
