@@ -189,12 +189,20 @@
     <script src="./sticky-topbar.js"></script>
     <script src="./smoothly-navigation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script>
     <script>
         //loading动画
         setTimeout(function () {
             siteWelcome.classList.remove('active')
         }, 1000)
 
+
+
+        AV.init({
+            appId: "YRjzDHkpxCnqw5LvVvWO2dwJ-gzGzoHsz",
+            appKey: "LRgTivj31KkAFdmJiPzp0lCC",
+            serverURL: "https://please-replace-with-your-customized.domain.com"
+        });
     </script>
 
 </body>
