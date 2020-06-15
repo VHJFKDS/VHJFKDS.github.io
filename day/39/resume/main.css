@@ -103,6 +103,7 @@ section.skills,
 section.portfolio{ max-width: 940px;margin:60px auto;/* margin-top:60px; */}
 section.portfolio{text-align: center;}
 section.skills>h2,
+section.message>h2,
 section.portfolio>h2{text-align: center;font-size: 34px;color:#3d4451;}
 
 section.skills>ol{background:white;height:245px;max-width: 940px;box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);padding:42px 50px;
@@ -114,43 +115,19 @@ section>ol>li .progressBar{background:#fae1e1;border-radius: 5px; margin:5px aut
 section .progressBar .progress{ background: #e6686a; height:100%; width:70%; border-radius:5px;transform: translateX(0);transition: all 1s;}
 section.skills.offset .progress{transform: translateX(-100%);}   /*技能条滚动*/
 
-/* section.portfolio >nav{margin-top:32px;text-align: center; display: inline-block; vertical-align: top;}
-section.portfolio >nav>ol{display: inline-block;margin:auto;vertical-align: top;}
-section.portfolio >nav>ol>li{float: left; margin-left:35px; cursor: pointer;}
-section.portfolio >nav>ol>li:first-child{ margin-left: 0;}
-section.portfolio >nav #portfolioBar{height: 5px;background:white; border-radius: 4px; margin-top:5px;}
-section.portfolio >nav .bar-inner{background:#e6686a; height: 100%; border-radius: 4px; width:35px; transition: all 0.3s;}
-section.portfolio > nav .bar.state-1 .bar-inner{width:35px;margin-left:0;}
-section.portfolio > nav .bar.state-2 .bar-inner{width:40px;margin-left:65px;}
-section.portfolio > nav .bar.state-3 .bar-inner{ width:95px; margin-left: 130px;} */
-
 section.portfolio .swiper-container {
-    width: 736px;      /*533+203px*/
+    max-width: 736px;      /*533+203px*/
     height: 400px;
     background-color: white;
     margin-top: 30px;
 }
-section.portfolio .swiper-container .swiper-wrapper .swiper-slide>img{
-    width: 533px;     
-    height: 400px;
-}
-section.portfolio .swiper-wrapper .swiper-slide{
-    display:flex;
-}
-section.portfolio .swiper-wrapper .swiper-slide>p{
-    margin: auto;
-    padding: 10px 30px;
-}
-section.portfolio .swiper-container .hide{
-    opacity:0;
-}
-section.portfolio .swiper-button-next,.swiper-button-prev{
-    transition:opacity 0.5s;
-}
+section.portfolio .swiper-container .swiper-wrapper .swiper-slide>img{width: 533px;     height: 400px;}
+section.portfolio .swiper-wrapper .swiper-slide{display:flex;}
+section.portfolio .swiper-wrapper .swiper-slide>p{margin: auto;padding: 10px 30px;}
+section.portfolio .swiper-container .hide{opacity:0;}
+section.portfolio .swiper-button-next,.swiper-button-prev{transition:opacity 0.5s;}
 section.portfolio .swiper-button-next::after,
-section.portfolio .swiper-button-prev::after{
-    font-size: 30px;
-}
+section.portfolio .swiper-button-prev::after{font-size: 30px;}
 
 
 
@@ -159,3 +136,58 @@ section div.works .big,
 section div.works .small{position: absolute;}
 section div.works .small{ right:0;}
 section div.works .small:nth-child(3){ top:308px;}
+
+
+section.message{
+    max-width: 800px;
+    margin: 30px auto;
+}
+section.message>ol{
+    border-top: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+section.message>ol>li{
+    padding: 16px;
+    border-bottom:1px solid #ddd;
+}
+section.message>form{
+    display: block;
+    max-width: 736px;
+    margin: auto;
+    text-align: end;
+}
+section.message>form>.name,
+section.message>form>.content{
+    border: 0.8px solid;
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px 10px;
+    color:gray;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition:border 0.3s;
+}
+section.message>form>.name:focus,
+section.message>form>.content:focus{
+    border: 0.8px solid rgb(90, 90, 241);
+    outline: none;
+}
+section.message>form>.name:hover,
+section.message>form>.content:hover{
+    border: 0.8px solid rgb(90, 90, 241);
+}
+section.message>form>.submit{
+   padding: 8px 30px;
+   border-radius: 5px;
+   background-color: indianred;
+   border: none;
+   font-size: 14px;
+   color: white;
+   transition:all 0.3s;
+}
+section.message>form>.submit:focus{
+    border: none;
+}
+section.message>form>.submit:hover{
+    background: #e6686a;
+}
