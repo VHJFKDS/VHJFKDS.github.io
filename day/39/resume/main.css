@@ -139,19 +139,19 @@ section div.works .small:nth-child(3){ top:308px;}
 
 
 section.message{
-    max-width: 800px;
+    max-width: 736px;
     margin: 30px auto;
 }
 section.message>ol{
     border-top: 1px solid #ddd;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 section.message>ol>li{
     padding: 16px;
     border-bottom:1px solid #ddd;
 }
 section.message>form{
-    display: block;
     max-width: 736px;
     margin: auto;
     text-align: end;
@@ -160,12 +160,18 @@ section.message>form>.name,
 section.message>form>.content{
     border: 0.8px solid;
     border-radius: 5px;
-    width: 100%;
-    padding: 8px 10px;
+    padding: 9px 10px;
     color:gray;
+    font-size: 15px;
     margin-bottom: 10px;
     box-sizing: border-box;
     transition:border 0.3s;
+}
+section.message>form>.name{
+    width: 25%;
+}
+section.message>form>.content{
+    width: 60%;
 }
 section.message>form>.name:focus,
 section.message>form>.content:focus{
@@ -181,7 +187,7 @@ section.message>form>.submit{
    border-radius: 5px;
    background-color: indianred;
    border: none;
-   font-size: 14px;
+   font-size: 15px;
    color: white;
    transition:all 0.3s;
 }
