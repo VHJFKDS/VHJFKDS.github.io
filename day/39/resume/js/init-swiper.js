@@ -1,6 +1,6 @@
 //作品区的轮播图
 !function (){
-    var view = document.querySelector('#mySlides')
+    var view = document.querySelector('nav.menu')
     // view.style.border = '1px solid red'
     var controller = function(view){
         var mySwiper = new Swiper('.swiper-container', {

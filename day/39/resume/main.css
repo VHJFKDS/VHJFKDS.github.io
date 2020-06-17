@@ -193,6 +193,7 @@ section.message>form>.submit{
 }
 section.message>form>.submit:focus{
     border: none;
+    outline: none;
 }
 section.message>form>.submit:hover{
     background: #e6686a;

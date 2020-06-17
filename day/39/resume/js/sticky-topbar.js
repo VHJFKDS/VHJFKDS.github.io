@@ -1,6 +1,6 @@
 /*监听顶部导航粘着效果*/
 !function () {
-    var view = document.querySelector('#topNavBar')    //声明视图区域是顶端导航
+    var view = document.querySelector('nav.menu')    //声明视图区域是顶端导航
     var controller = {
         view: null,
         init: function(view) {
