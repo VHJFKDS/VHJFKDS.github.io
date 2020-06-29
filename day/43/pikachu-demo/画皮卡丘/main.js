@@ -143,7 +143,7 @@
    border-bottom-left-radius: 60px 30px;
    border-top: none;
    border-right: none;
-   transform: rotate(-20deg);
+   transform: rotate(-21deg);
     }
 .upperLip.right{
    left:50%;
