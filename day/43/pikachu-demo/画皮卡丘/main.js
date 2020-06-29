@@ -1,24 +1,48 @@
 !function () {
+    var duration = 30
+    $('.actions').on('click','button',function(e){
+        let $button = $(e.currentTarget)    //button
+        let speed = $button.attr('data-speed')
+        $button.addClass('active')
+        .siblings('.active').removeClass('active')
+        switch(speed){
+            case 'slow':
+               duration = 90
+               break
+            case 'normal':
+                duration = 40
+                break
+            case 'fast':
+                duration = 10
+                break
+        }
+    })
     function writeCode(prefix, code, fn) {
         let container = document.querySelector('#code')
         let styleTag = document.querySelector('#styleTag')
         let n = 0
-        let id = setInterval(() => {
+        let id
+        id = setTimeout(function run(){
             n += 1
             container.innerHTML = code.substring(0,n)
             styleTag.innerHTML = code.substring(0,n)
             container.scrollTop = container.scrollHeight
-            if (n >= code.length) {
-                window.clearInterval(id)
+            if (n < code.length) {
+                id = setTimeout(run,duration)
+                
+            }else{
                 setTimeout(function(){
                     container.style = "overflow-y:scroll;"
-                },1000)  
+                },1000)
                 fn && fn.call()    //如果有回调，就调用回调
-            }
-        }, 70)
+            } 
+        }, duration)
     }
         let code = `
-/* 首先需要皮卡丘的皮 */
+/* 
+* 给大家画个皮卡丘吧嘻嘻(๑╹ヮ╹๑)ﾉ 
+* 首先需要皮卡丘的皮 
+*/
 
 .preview{
    height: 100%;
@@ -168,8 +192,9 @@
     
 /* 好了，这只皮卡丘送给你 */
     `
-    
     writeCode('',code)
+
+    
 }.call()   //立即执行函数
 
 
