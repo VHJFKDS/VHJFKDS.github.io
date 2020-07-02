@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 1px solid red;
+            min-height: 100vh;
+            /*这个css，IE不好用*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .form-wrapper {
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .form-wrapper .row {
+            margin: 10px 0;
+        }
+
+        .form-wrapper .row>label {
+            display: inline-block;
+            min-width: 4em;
+        }
+        #button>input{
+            padding: 6px 25px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>注册</h1>
+        <form id="signUpForm">
+            <div class="row">
+                <label>邮箱</label>
+                <input type="text" name="email">
+            </div>
+            <div class="row">
+                <label>密码</label>
+                <input type="password" name="password">
+            </div>
+            <div class="row">
+                <label>确认密码</label>
+                <input type="password" name="password_confirmation">
+            </div>
+            <div class="row" id="button">
+                <input type="submit" value="注册">
+            </div>
+
+        </form>
+    </div>
+    <script
+    src="http://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script>
+        
+       $('#signUpForm').on('submit',(e)=>{
+           e.preventDefault()
+           let hash = {}
+           let need = ['email','password','password_confirmation']
+           need.forEach((name)=>{
+            let value = $('#signUpForm').find(`[name=${name}]`).val()  //获取用户输入的信息，放入hash中
+            hash[name] = value   //这里得出的结果很像排序计数算法
+        })
+        $.post('/sign_up',hash)
+           .then((response)=>{
+                console.log(response)
+        },(request)=>{
+            // if(request.responseText === 'email is bad'){    //当后台写的提示不好时，可自己更换
+            //    let object = JSON.parse(request.responseText)
+            //    let error = object.error
+            //let error = object.error可这样写 let {errors} = object
+            //再简写
+               let {errors} = request.responseJSON  //这一步浏览器在收到是json时会自动帮你json.parse
+               if(errors.email && errors.email === 'invalid'){
+                   alert('你的邮箱输错了')
+               }
+        })
+        
+    })
+    </script>
+</body>
+
+</html>
