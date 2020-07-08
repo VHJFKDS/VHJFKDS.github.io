@@ -14,5 +14,12 @@
     <input type="button" value="登录" onclick="location.href='/sign_in'">
     <button>注销</button>
     
+    <script>
+        let already = localStorage.getItem('已经提示了')
+        if(!already){   //如果没有提示过,就提示一下顺便记录了
+            alert('你好，我们的网址改版了，有了这些新功能：。。。。。')
+            localStorage.setItem('已经提示了',true)
+        }
+    </script>
 </body>
 </html>
