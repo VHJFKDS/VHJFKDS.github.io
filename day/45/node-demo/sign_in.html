@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 1px solid red;
+            min-height: 100vh;
+            /*这个css，IE不好用*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .form-wrapper {
+            padding: 20px;
+            border: 1px solid #ddd;
+            min-width: 370px;
+        }
+
+        .form-wrapper .row {
+            margin: 10px 0;
+        }
+
+        .form-wrapper .row>label {
+            display: inline-block;
+            min-width: 4em;
+        }
+        #button>input{
+            padding: 6px 25px;
+            display: block;
+            margin: auto;
+        }
+        .form-wrapper .row>span{
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>登录</h1>
+        <form id="signInForm">
+            <div class="row">
+                <label>邮箱</label>
+                <input type="text" name="email">
+                <span class="error"></span>
+            </div>
+            <div class="row">
+                <label>密码</label>
+                <input type="password" name="password">
+                <span class="error"></span>
+            </div>  
+            <div class="row" id="button">
+                <input type="submit" value="登录">
+            </div>
+        </form>
+    </div>
+    <script
+    src="http://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script>
+        let $form = $('#signInForm')
+       $form.on('submit',(e)=>{
+           e.preventDefault()
+           let hash = {}
+           let need = ['email','password']
+           need.forEach((name)=>{
+            let value = $form.find(`[name=${name}]`).val()  //获取用户输入的信息，放入hash中
+            hash[name] = value   //这里得出的结果很像排序计数算法
+        })
+        $form.find('.error').each((index,span)=>{   //jq反着来，先找到span,把他们文本变空
+            $(span).text('')
+        })
+        if(hash['email'] === ''){      //在post前验证用户有无输入，如果是空
+           $form.find('[name="email"]').siblings('.error')    //就从表单里找到email，再找到兄弟.error
+           .text('请填写邮箱')             //在error处提示，并返回数据，不post
+           return
+        }
+        if(hash['password'] === ''){     
+           $form.find('[name="password"]').siblings('.error')    
+           .text('请填写密码')             
+           return
+        }
+        
+        $.post('/sign_in',hash)
+           .then((response)=>{
+               window.location.href = '/'  //登录成功跳转首页
+        },(request)=>{
+            alert('登录失败，邮箱与密码不匹配！')   
+        })
+        
+    })
+    </script>
+</body>
+
+</html>
