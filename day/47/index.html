@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+    <link rel="stylesheet" href="">
+    <title>修改数据</title>
+</head>
+<body>
+    <div class="app">
+        <div>
+            书名：《__name__》
+            数量：<span id="number">__number__</span>
+        </div>
+        <div>
+            <button id="addOne">加1</button>
+            <button id="minusOne">减1</button>
+            <button id="reset">归零</button>
+        </div>
+    </div>
+<script>
+// $('#addOne').on('click',function(){
+//     var oldNumber = $('#number').text()    //string
+//     var newNumber = oldNumber -0 +1   //-0是为了把它变成数字，再+1
+//     $('#number').text(newNumber)
+// })
+// $('#minusOne').on('click',function(){
+//     var oldNumber = $('#number').text()    //string
+//     var newNumber = oldNumber -0 -1   //-0是为了把它变成数字，再+1
+//     $('#number').text(newNumber)
+// })
+// $('#reset').on('click',function(){
+//     $('#number').text(0)    //直接归零
+// })
+
+//*********************下面是加了axios后的写法******************
+//下面是有关axios
+//用axios自己造数据(不做服务器)
+axios.get('/book/1').then(({data})=>{  //(response.data)
+    console.log(data)
+    let originalHtml = $('#app').html()   //获取旧的#app内容
+    let newHtml = originalHtml.replace('__name__',data.name)
+        .replace('__number__',data.number)   
+        $('#app').html(newHtml)    //上面删掉，替换掉里面的内容
+})                                 
+console.log(2)
+//在真正返回response前使用此函数：此函数会对response做修改
+axios.interceptors.response.use(function(response){
+    // let config = response.config   //找到响应的config
+    // let {url,method,data} = config  //从config里找他的三个值，此处data是请求的data
+    let {config:{url,method,data}} = response  
+    //es6的简便写法，上面两句浓缩成一句，且同时声明了url,method,data三个变量
+
+    if(url === '/book/1' && method === 'get'){
+        response.data = {    //响应的data  ,修改里面的data
+        name:'JavaScript高级程序设计',
+        number:2,
+        id:1   //书的id
+    }
+    }
+    return response
+})
+
+
+//原本监听的button已被替换（上面已有代码替换内容），新的只能做委托代码
+//当你在点#app里任何一个元素，只要这个元素符合（如'#addOne)这个选择器，那么就会执行代码
+$('#app').on('click','#addOne',function(){
+    var oldNumber = $('#number').text()    //string
+    var newNumber = oldNumber -0 +1   //-0是为了把它变成数字，再+1
+    $('#number').text(newNumber)
+})
+$('#app').on('click','#minusOne',function(){
+    var oldNumber = $('#number').text()    //string
+    var newNumber = oldNumber -0 -1   //-0是为了把它变成数字，再+1
+    $('#number').text(newNumber)
+})
+$('#app').on('click','#reset',function(){
+    $('#number').text(0)    //直接归零
+})
+
+
+</script>
+</body>
+</html>
