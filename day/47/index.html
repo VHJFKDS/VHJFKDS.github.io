@@ -48,6 +48,12 @@ axios.get('/book/1').then(({data})=>{  //(response.data)
 })                                 
 console.log(2)
 //在真正返回response前使用此函数：此函数会对response做修改
+let book = {
+    name:'JavaScript高级程序设计',
+        number:2,
+        id:1
+}
+
 axios.interceptors.response.use(function(response){
     // let config = response.config   //找到响应的config
     // let {url,method,data} = config  //从config里找他的三个值，此处data是请求的data
@@ -55,11 +61,10 @@ axios.interceptors.response.use(function(response){
     //es6的简便写法，上面两句浓缩成一句，且同时声明了url,method,data三个变量
 
     if(url === '/book/1' && method === 'get'){
-        response.data = {    //响应的data  ,修改里面的data
-        name:'JavaScript高级程序设计',
-        number:2,
-        id:1   //书的id
-    }
+        response.data = book
+    }else if(url === '/books/1' && method === 'put'){
+        Object.assign(book,data)  //assign赋值（批量），把data赋值到book上
+        response.data = book
     }
     return response
 })
@@ -70,15 +75,27 @@ axios.interceptors.response.use(function(response){
 $('#app').on('click','#addOne',function(){
     var oldNumber = $('#number').text()    //string
     var newNumber = oldNumber -0 +1   //-0是为了把它变成数字，再+1
-    $('#number').text(newNumber)
+    axios.put('/books/1',{
+        number:newNumber     //每次点击按钮，把newnumber以number方式put
+    }).then(()=>{   //成功了就改数据
+        $('#number').text(newNumber)  
+    })
 })
 $('#app').on('click','#minusOne',function(){
     var oldNumber = $('#number').text()    //string
     var newNumber = oldNumber -0 -1   //-0是为了把它变成数字，再+1
-    $('#number').text(newNumber)
+    axios.put('/books/1',{
+        number:newNumber
+    }).then(()=>{
+        $('#number').text(newNumber)
+    })
 })
 $('#app').on('click','#reset',function(){
-    $('#number').text(0)    //直接归零
+    axios.put('/books/1',{
+        number:0
+    }).then(()=>{
+        $('#number').text(0)    //直接归零
+    })    
 })
 
 
