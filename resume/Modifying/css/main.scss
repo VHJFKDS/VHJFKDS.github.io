@@ -1,0 +1,82 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+
+body{
+    height: 100vh;
+}
+#container{
+    background: url("../img/wallhaven-j8yvky.jpg"),url("../img/wallhaven-j8yvky.jpg"),url("../img/wallhaven-4yqdl7.jpg"),url("../img/wallhaven-zx851g.jpg");
+    background:center/cover url("../img/wallhaven-j8yvky.jpg") no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 550px;
+    animation: bg 30s infinite alternate;
+    -moz-animation: bg 30s infinite alternate; /* Firefox */
+	-webkit-animation: bg 30s infinite alternate; /* Safari and Chrome */
+	-o-animation: bg 30s infinite alternate; /* Opera */
+    
+}
+@keyframes bg{
+    0%{
+    background:center/cover url("../img/wallhaven-j8yvky.jpg") no-repeat;
+    }
+    25%{
+        background: center/cover url("../img/wallhaven-j8yvky.jpg") no-repeat;
+    }
+    50%{
+        background: center/cover url("../img/wallhaven-4wo6r9p.jpg") no-repeat;
+    }
+    75%{
+        background: center/cover url("../img/wallhaven-4yqdl7.jpg") no-repeat;
+    }
+    100%{
+        background: center/cover url("../img/wallhaven-zx851g.jpg") no-repeat;
+    }
+    
+}
+#picture{
+    background: white;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background: url("../img/1596262843\(1\).png") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+h1,h3{padding: 10px 20px;}
+span{
+    padding: 10px 150px;
+    border-top: 0.7px solid #888;
+}
+
+#icon img{
+    
+    width: 30px;
+    height: 30px;
+}
+#icon a{
+    text-decoration: none;
+    margin: 0 10px;
+}
+p{
+    margin: 15px;
+}
+button{
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+    
+}
+button:hover{
+    background: white;
+    transition: all 1s;
+}
+button:focus{
+    outline: none;
+}

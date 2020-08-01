@@ -22,52 +22,23 @@
         </div>
     </div>
 <script>
-// $('#addOne').on('click',function(){
-//     var oldNumber = $('#number').text()    //string
-//     var newNumber = oldNumber -0 +1   //-0是为了把它变成数字，再+1
-//     $('#number').text(newNumber)
-// })
-// $('#minusOne').on('click',function(){
-//     var oldNumber = $('#number').text()    //string
-//     var newNumber = oldNumber -0 -1   //-0是为了把它变成数字，再+1
-//     $('#number').text(newNumber)
-// })
-// $('#reset').on('click',function(){
-//     $('#number').text(0)    //直接归零
-// })
+                                
+fakeData()
 
-//*********************下面是加了axios后的写法******************
-//下面是有关axios
-//用axios自己造数据(不做服务器)
+let model = {
+    fetch(id){
+        return axios.get('/book/1')
+    },   //获取
+    update(){}    //更新
+}
+//下面是用axios自己造数据(假的后台)
 axios.get('/book/1').then(({data})=>{  //(response.data)
     console.log(data)
     let originalHtml = $('#app').html()   //获取旧的#app内容
     let newHtml = originalHtml.replace('__name__',data.name)
         .replace('__number__',data.number)   
         $('#app').html(newHtml)    //上面删掉，替换掉里面的内容
-})                                 
-console.log(2)
-//在真正返回response前使用此函数：此函数会对response做修改
-let book = {
-    name:'JavaScript高级程序设计',
-        number:2,
-        id:1
-}
-
-axios.interceptors.response.use(function(response){
-    // let config = response.config   //找到响应的config
-    // let {url,method,data} = config  //从config里找他的三个值，此处data是请求的data
-    let {config:{url,method,data}} = response  
-    //es6的简便写法，上面两句浓缩成一句，且同时声明了url,method,data三个变量
-
-    if(url === '/book/1' && method === 'get'){
-        response.data = book
-    }else if(url === '/books/1' && method === 'put'){
-        Object.assign(book,data)  //assign赋值（批量），把data赋值到book上
-        response.data = book
-    }
-    return response
-})
+}) 
 
 
 //原本监听的button已被替换（上面已有代码替换内容），新的只能做委托代码
@@ -98,6 +69,31 @@ $('#app').on('click','#reset',function(){
     })    
 })
 
+
+//*********不要看**********//
+//在真正返回response前使用此函数：此函数会对response做修改
+function fakeData(){
+    let book = {
+    name:'JavaScript高级程序设计',
+    number:2,
+    id:1
+}
+
+axios.interceptors.response.use(function(response){
+    // let config = response.config   //找到响应的config
+    // let {url,method,data} = config  //从config里找他的三个值，此处data是请求的data
+    let {config:{url,method,data}} = response  
+    //es6的简便写法，上面两句浓缩成一句，且同时声明了url,method,data三个变量
+
+    if(url === '/book/1' && method === 'get'){
+        response.data = book
+    }else if(url === '/books/1' && method === 'put'){
+        Object.assign(book,data)  //assign赋值（批量），把data赋值到book上
+        response.data = book
+    }
+    return response
+})
+}
 
 </script>
 </body>
