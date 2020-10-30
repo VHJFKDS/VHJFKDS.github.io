@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./css/resume.css">
     <title>我的简历</title>
+    <style media="print">
+      body{
+        margin: 0;
+      }
+    </style>
 </head>
 <body>
+  <div class="container">
+
+  
   <section>
 <h1>杨宝芝</h1>
 <img src="">
@@ -26,25 +34,25 @@
       <ol>
           <li>
               <header>
-                <h3>旺财记账</h3>
+                <h3>记账</h3>
                 <a href="https://github.com/VHJFKDS/AccountBook-Program">源代码</a>
                 <a href="">项目预览</a>
               </header>
-              <p>一款基于Vue/TypeScript的移动端单页面应用。</p>
-              <p>这是我从自己的需求出发，设计出的极简记账应用，特点是快速记账，而且可以通过图表查看自己的消费习惯。</p>
-              <p>该项目大量使用HOOKS，让我对hooks有了深刻的理解和应用。</p>
+              <p>一款基于<span>Vue/TypeScript</span>的移动端单页面应用。</p>
+              <p>这是我从自己的需求出发，设计出的极简记账应用，特点是快速记账，查看收入和支出详情，还可以通过图表查看自己的消费习惯。</p>
+              <p>该项目使用<span>Vue2 + TypeScript + VueCli 4 +VueRouter3+Vuex3+SVG+Echart+SCSS</span>，项目完成后进行模块化，多次尝试使用不同的loader组件，让我对二次封装有了深刻的理解和应用。</p>
           </li>
           <li>
-            <header>
+            <!-- <header>
               <h3>SnowUI</h3>
               <a href="">源代码</a>
               <a href="">项目预览</a>
             </header>
-            <p>一款基于Vue/TypeScript的UI框架。</p>
-            <p>主要组件有日期选择器、弹出框、下拉更新、树形选择器等。</p>
-            <p>制作过程让我对TypeScript和单元测试有了新的认识，我将其总结成两片博客，链接：</p>
-        </li>
-          <li>
+            <p>一款基于<span>Vue/BDD测试模式并部署到Travis Ci上持续集成</span>的一个自制简洁UI框架。</p>
+            <p>这是我在学习Vue的过程中做的一个UI框架，目前已经做了button、网格布局和手风琴等6个ui组件。该项目使用了<span>Vue、SCSS、SVG-iconfont、webpack、基于BDD的测试模式，部署Ci持续集成、单元测试采用chai、karma和sinon等框架，</span>后面会持续更新一些好用的ui。</p>
+            <p>这次项目让我对制作框架、测试用例和部署框架的应用有了比较深的印象。</p>
+        </li> -->
+          <!-- <li>
             <header>
               <h3>番茄闹钟</h3>
               <a href="https://github.com/VHJFKDS/clock_mini_program">源代码</a>
@@ -53,7 +61,7 @@
             <p>一款基于Vue/TypeScript的移动端单页面应用。</p>
             <p>这是我从自己的需求出发，设计出的极简记账应用，特点是快速记账，而且可以通过图表查看自己的消费习惯。</p>
             <p>该项目大量使用HOOKS，让我对hooks有了深刻的理解和应用。</p>
-        </li>
+        </li> -->
       </ol>
 </section>
 <section>
@@ -103,14 +111,15 @@
 <section>
       <h2>个人技能</h2>
       <ul>
-          <li>熟练掌握静态页面制作技巧，能将设计稿完美还原成页面</li>
-          <li>熟悉前后端分离技术，包括AJAX、跨域、前端路由、Cookie、Session等</li>
-          <li>熟练掌握Vue全家桶的使用、包括create-react-app、等</li>
+          <li>熟练掌握静态页面制作技巧，能将设计稿<span>完美还原</span>成页面</li>
+          <li>熟悉<span>前后端分离</span>技术，包括AJAX、跨域、前端路由、Cookie、Session等</li>
+          <li>熟练掌握<span>Vue全家桶</span>的使用、包括VueCli、VueRouter、Vuex等</li>
           <li>熟悉ES6，包括let / const / Promise / await / 析构赋值</li>
           <li>了解TypeScript的使用，我的项目就是TS实现的。</li>
-          <li>了解Webpack的配置和优化</li>
+          <li>了解Webpack的配置和优化和基于BDD模式的测试用例，部署CI</li>
       </ul>
 </section>
+</div>
 <script src="">
 </script>
 </body>
