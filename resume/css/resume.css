@@ -1,13 +1,26 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
 body{
     background: #eee;
-    margin: 20px auto;
+    margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+li{list-style: none; margin: 36px 0;}
 .container{
-    width: 80%;
+    width: 70%;
     background: white;
     padding: 30px;
 }
+.head{margin-top: 10px;}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+section{margin-top:50px ;}
+h2{margin: 20px 0;}
+h3{margin-right: 20px;}
+a{margin: 0 10px;color: inherit;}
+span{color: orange;}
