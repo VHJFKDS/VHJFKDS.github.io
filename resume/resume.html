@@ -11,6 +11,8 @@
         margin: 0;
       }
       .container{width: 100%;}
+     li{list-style: none; margin: 10px 0;}
+
     </style>
 </head>
 <body>
@@ -18,10 +20,14 @@
 
   
   <section class="head">
-<h1>杨宝芝</h1>
-<img src="">
+    <img src="./img//小图.jpeg">
+    <div class="message">
+      <h1>杨宝芝</h1>
+
 <p>女 | 27岁 | 前端开发工程师 | 东莞</p>
-<p>手机：13148912152（微信同号） | 邮箱：651033755@qq.com</p>
+<p>13148912152（微信同号） | 651033755@qq.com</p>
+    </div>
+
   </section>
 <section>
     <h2>教育经历</h2>
@@ -36,26 +42,24 @@
           <li>
               <header>
                 <h3>青木记账</h3>
-          <div class="link">
-
                 <a href="https://github.com/VHJFKDS/AccountBook-3">源代码</a>
-                <a href=" http://vhjfkds.gitee.io/accountbook-3-website">项目预览</a>
-                </div>
+                <a href=" http://vhjfkds.gitee.io/accountbook-3-website">项目预览：http://vhjfkds.gitee.io/accountbook-3-website</a>
               </header>
               <p>一款基于<span>Vue、VueRouter</span>的移动端单页面应用。源代码几乎完全用TypeScript实现。</p>
               <p>这是我从自己的需求出发，设计出的极简记账应用，特点是快速记账，查看收入和支出详情，还可以通过图表查看自己的消费习惯。</p>
-              <p>该项目技术上使用了<span>Vue2 + TypeScript + VueCli 4 + VueRouter3 + Vuex3 + SVG + Echart + SCSS</span>，项目完成后进行模块化，实现了记账、数据统计及可视化，对内部常用代码进行封装重复实现。</p>
+              <p>该项目技术上使用了<span>Vue2 + TypeScript + VueCli + VueRouter + Vuex + SVG + Echart + SCSS</span>，项目完成后进行模块化，实现了记账、数据统计及可视化，对内部常用代码进行封装重复实现。</p>
+           
+              
           </li>
           <li>
 
             <li>
               <header>
                 <h3>Diagram画板</h3>
-          <div class="link">
-
+        
                 <a href="https://github.com/VHJFKDS/Canvas-demo">源代码</a>
-                <a href="http://vhjfkds.gitee.io/canvas2.0/canvas.html">项目预览</a>
-                </div>
+                <a href="http://vhjfkds.gitee.io/canvas2.0/canvas.html">项目预览：http://vhjfkds.gitee.io/canvas2.0/canvas.html</a>
+                
               </header>
               <p>这是我在学习canvas时做的一个画板。</p>
               <p>该项目技术使用<span>原生JS</span>，主要调用Canvas API，实现了划线、调色、橡皮擦、保存等功能，完全有我独立开发。适配移动端和PC、多线条多颜色选择，可用于绘图、笔记。</p>
@@ -88,23 +92,20 @@
         <li>
           <header>
             <h3>极简导航</h3>
-          <div class="link">
 
             <a href="https://github.com/VHJFKDS/Webpage-Navigation">源代码</a>
-            <a href="https://vhjfkds.gitee.io/webpage-navigation/">项目预览</a>
-            </div>
+            <a href="https://vhjfkds.gitee.io/webpage-navigation/">项目预览：https://vhjfkds.gitee.io/webpage-navigation/</a>
+            
           </header>
           <p>这是我在学习JS的时候做的一个简单的导航网站。</p>
           <p>使用技术：<span>JQuery、正则表达式、localStorage</span></p>
-          <p>风格简单、界面简洁。适配移动端和PC、默认百度搜索，可自定义增加、删除标签网页。</p>
+          <p>风格简单、界面简洁。适配移动端和PC、默认百度搜索，可自定义增加、删除标签网页。目前是我的浏览器首页。</p>
       </li>
       <li>
         <header>
           <h3>会动的皮卡丘</h3>
-          <div class="link">
             <a href="https://github.com/VHJFKDS/CSS-Animation-Demo">源代码</a>
-            <a href="http://vhjfkds.gitee.io/css-animation-demo/">项目预览</a>
-          </div>
+            <a href="http://vhjfkds.gitee.io/css-animation-demo/">项目预览：http://vhjfkds.gitee.io/css-animation-demo/</a>
         </header>
         <p>这是我在学习JS的时候做的一个小动画。</p>
     </li>
@@ -132,7 +133,7 @@
         </li> -->
     </ol>
 </section>
-<section>
+<section style="page-break-after: always;">
     <h2>其他链接</h2>
     <ul>
         <li><a href="https://juejin.im/user/2946346893973390">目前已有30篇博客</a></li>
@@ -141,27 +142,21 @@
     </ul>
 
 </section>
-<section>
+<section class="skill">
       <h2>个人技能</h2>
       <ul>
-        <li>熟悉常用的CSS布局，例如flex、float、grid等</li>
+        <li>熟练掌握HTML5、CSS、JavaScript等开发语言，熟悉常用的CSS布局，例如flex、float、grid等</li>
           <li>熟练掌握静态页面制作技巧，能将设计稿<span>完美还原</span>成页面</li>
           <li>熟悉<span>前后端分离</span>技术，包括AJAX、跨域、前端路由、Cookie、Session等</li>
+          <li>熟练掌握<span>git</span>的常用技巧</li>
+          <li>熟悉<span>移动端适配</span></li>
           <li>熟练掌握<span>Vue全家桶</span>的使用、包括VueCli、VueRouter、Vuex等</li>
           <li>熟悉ES6，包括let / const / Promise / 箭头函数 / 析构赋值等等</li>
-          <li>了解TypeScript的使用，我的项目就是TS实现的。</li>
+          <li>了解<span>TypeScript</span>的使用，我的项目就是TS实现的。</li>
           <li>了解Webpack的配置和优化</li>
-          <li>熟练掌握git的常用技巧</li>
       </ul>
 </section>
-<section>
-  <h2>工作经历</h2>
-  <ul>
-    <li>东莞小仓离合机有限公司  日语翻译  2016年~2018年</li>
-     
-    <li>东莞市洪力印务有限公司  行政专员  2018年~2019年</li>
-  </ul>
-</section>
+
 </div>
 <script src="">
 </script>
